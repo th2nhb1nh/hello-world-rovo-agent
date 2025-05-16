@@ -1,1 +1,3 @@
-export { handler } from './resolvers';
+export function messageLogger(payload){
+  console.log(`Logging message: ${payload.message}`);
+}
