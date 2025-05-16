@@ -1,39 +1,64 @@
 # Forge Hello World
 
-This project contains a Forge app written in Javascript that displays `Hello World!` in a Jira project page. 
+This project is a Forge app written in JavaScript that displays `Hello World!` on a Jira project page.
 
-See [developer.atlassian.com/platform/forge/](https://developer.atlassian.com/platform/forge) for documentation and tutorials explaining Forge.
+For more details, documentation, and tutorials, check out [developer.atlassian.com/platform/forge/](https://developer.atlassian.com/platform/forge).
 
 ## Requirements
 
-See [Set up Forge](https://developer.atlassian.com/platform/forge/set-up-forge/) for instructions to get set up.
+To get started, follow the [Set up Forge](https://developer.atlassian.com/platform/forge/set-up-forge/) guide.
 
-## Quick start
-- Install dependecies
-```
-npm install
-```
-- Modify your app frontend by editing the `src/frontend/index.jsx` file.
+## Quick Start
 
-- Modify your app backend by editing the `src/resolvers/index.js` file to define resolver functions. See [Forge resolvers](https://developer.atlassian.com/platform/forge/runtime-reference/custom-ui-resolver/) for documentation on resolver functions.
+- Install dependencies:
+  ```
+  npm install --g @forge/cli@latest
+  ```
 
-- Build and deploy your app by running:
-```
-forge deploy
-```
+- Update your app’s frontend by editing `src/frontend/index.jsx`.
 
-- Install your app in an Atlassian site by running:
-```
-forge install
-```
+- Update your app’s backend by editing `src/resolvers/index.js` to define resolver functions. See the [Forge resolvers documentation](https://developer.atlassian.com/platform/forge/runtime-reference/custom-ui-resolver/) for more info.
 
-- Develop your app by running `forge tunnel` to proxy invocations locally:
-```
-forge tunnel
-```
+- Create your app:
+  ```
+  forge create
+  ```
+  1. Enter your agent’s name.
+  2. Choose _Rovo_ → _Rovo Agent and action_ → _rovo-agent_.
+  3. Wait for the confirmation:
+    ```
+    ✔ Created <app-name>
+
+    Your app is ready to work on, deploy, and install. We created 3 environments you can deploy to: production, staging, development.
+
+    Change to directory <app-name> to see your app files.
+    ```
+
+- Move into your new app’s directory:
+  ```
+  cd <app-name>
+  ```
+
+- Build and deploy your app:
+  ```
+  forge deploy
+  ```
+
+- Install your app on an Atlassian site:
+  ```
+  forge install
+  ```
+  1. Select the context for your agent (Jira, Confluence, Bitbucket, etc.).
+  2. Enter your site name in the format: `your-domain.atlassian.net`.
+  3. Type `Yes` and press Enter to continue.
+
+- For local development, run:
+  ```
+  forge tunnel
+  ```
 
 ### Notes
-- Use the `forge deploy` command when you want to persist code changes.
-- Use the `forge install` command when you want to install the app on a new site.
-- Once the app is installed on a site, the site picks up the new app changes you deploy without needing to rerun the install command.
 
+- Use `forge deploy` to save and push code changes.
+- Use `forge install` to install the app on a new site.
+- After the app is installed, any new deployments will be picked up automatically by the site—no need to reinstall.
