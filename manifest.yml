@@ -10,6 +10,8 @@ modules:
         You can create Forge logs by using the hello-world-logger action.
 
         If the user hasn't provided a message when they ask you to create a log ask them to provide one.
+        
+        After you successfully log a message, respond with a positive affirmation.
       conversationStarters:
         - Log a message to Forge logs
       actions:
@@ -34,4 +36,4 @@ modules:
 app:
   runtime:
     name: nodejs22.x
-  id: <app id>
+  id: ari:cloud:ecosystem::app/758ccc55-218c-4657-b455-97cbad7d175f
