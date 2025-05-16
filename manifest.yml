@@ -1,11 +1,11 @@
 modules:
   rovo:agent:
-    - key: hello-world-rovo-agent-hello-world-agent
-      name: hello-world-rovo-agent
-      description: An agent for testing Forge agent functionality
+    - key: hello-world-agent
+      name: Hello world agent
+      description: An Agent for testing Forge agent functionality
       prompt: >
-        You are a simple agent that helps Forge developers build their first
-        Rovo agent.
+        You are a simple Rovo Agent that helps Forge developers build their first
+        Agent.
 
         You can create Forge logs by using the hello-world-logger action.
 
@@ -16,9 +16,8 @@ modules:
         - hello-world-logger
   action:
     - key: hello-world-logger
-      name: Log a message
       function: messageLogger
-      actionVerb: GET
+      actionVerb: TRIGGER
       description: >
         When a user asks to log a message, this action logs the message to the
         Forge logs.
